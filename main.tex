@@ -12,7 +12,7 @@
 \geometry{margin=2.5cm}
 
 % --- Title Info ---
-\title{Praktikum Data Science: Phase 1 Report}
+\title{Praktikum Data Science: Phase 2 Report}
 \author{Éva Mária Szabó \\ \small Karlsruher Institut für Technologie (KIT)}
 \date{\today}
 
@@ -25,41 +25,46 @@
 
 % --- Sections ---
 \section{Introduction}
-In my team, which is Team 3, we did most parts of our exercise in a pair programming style. Due to that, most commits are not under my name, since I was not the one who pushed them. However, I still contributed significantly to the project, so I will summarize my contributions here.
 
-\section{Week 1 - Data Exploration}
-To kick things off, I created some bar charts and pie charts based on the data.
+At the start of the project, we learned about benchmarking, I created the project repository and set up the environment so everything would run smoothly. This included organizing files and installing the needed packages.
+
+Together with my teammates, we chose the encoders, scalers, and other tools to test. I was in charge of finding 20 different datasets from the recommended sources. This took time, as I made sure they varied in size and type to give us useful results.
+
+\section{Experiments}
+
+During the experimentation phase, we quickly realized that not all preprocessing configurations were compatible with every dataset. Certain encoders or scalers failed on specific data due to missing values, categorical anomalies, or incompatible formats. I was in charge of searching for new datasets, as we couldn’t always tell if the errors were caused by the datasets themselves or by the preprocessing steps. I also helped diagnose issues and refine the pipeline to ensure everything ran smoothly.
+
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/example_plot_jupyter.png}
-    \caption{Example of a plot I created in Jupyter Notebook}
-    \label{fig:data_exploration}
+    \includegraphics[width=0.8\textwidth]{figures/dataset_choices.png}
+    \caption{Some of the datasets we tested.}
+    \label{fig:datasets}
 \end{figure}
-In Figure~\ref{fig:data_exploration}, you can see an example of a plot I created in Jupyter Notebook. This helped us better understand the data and identify potential issues.  
-I also wrote some initial code to load the data and perform basic statistical analysis, which was crucial for our understanding of the dataset. Additionally, I commented on each plot and the conclusions we drew from them.
 
-\section{Week 2 - Cleaning and Pipeline}
-From this week onwards, I was mostly responsible for research. For this week, that meant looking into how to clean the data and how to set up a pipeline for our data processing. I found that we could use the \texttt{sklearn} library for this purpose, which is very powerful and flexible.  
-I also wrote some initial code to clean the data and build a pipeline structure. Since I had previously worked on some data science projects, I was able to apply my knowledge and experience to this project, such as how to handle missing values, encode categorical variables, and scale numerical features.
+Figure~\ref{fig:datasets} shows a subset of the datasets used in the benchmarking process. Identifying and selecting these datasets required a significant amount of research and manual inspection to ensure suitability for the experiments.
 
-For this week's presentation, although it was not my turn, I helped Nimród with the slides and provided feedback on the content. I also created some plots to visualize the data cleaning process and the pipeline structure.
+\section{Visualizations and Testing}
 
-\section{Week 3 - Feature Engineering}
-We had many discussions about which features to use and how to create new ones. I researched various feature engineering techniques, such as one-hot encoding, label encoding, and feature scaling. We also decided to create some new columns based on my idea of using volume percentage instead of height and area percentages.
+One of my primary responsibilities in the project was designing and conducting the performance evaluations. I implemented a range of visualizations to illustrate how different combinations of encoders and scalers performed across the selected datasets. These visualizations included bar plots and heatmaps, which helped us identify patterns and anomalies in model behavior.
 
-\section{Week 4 - Prediction Models}
-Since we agreed that I would be giving the presentation for this week, I focused on understanding different prediction models. I researched various algorithms such as logistic regression, decision trees, random forests, etc.  
-This helped us understand the strengths and weaknesses of each model and how to choose the best one for our dataset. I also wrote some initial code to evaluate the models and compare their performance.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/ex_plot.png}
+    \caption{An example of the performance plots I generated during testing.}
+    \label{fig:plot}
+\end{figure}
 
-\section{Week 5 - Dealing with Imbalanced Multi-Class Data}
-I researched various techniques for dealing with imbalanced multi-class data, such as oversampling, undersampling, threshold tuning, and using different evaluation metrics. I also implemented some of these techniques in Python using the \texttt{imblearn} library.  
-This helped us understand how to handle imbalanced data and how to choose the best evaluation metric for our dataset.
+Figure~\ref{fig:plot} presents one of the many plots I created to support our analysis. I also interpreted the results of these plots and documented the key insights in a shared notebook, which later served as a basis for our decisions on the final preprocessing configurations.
 
-\section{Week 6 - Hyperparameter Tuning}
-For this week, it was Ádám's turn to present, so he did most of the work. However, I continued my research on cross-validation and different prediction models. I also helped him prepare the presentation and provided feedback on his slides, as well as created some plots to visualize the results of the hyperparameter tuning process.
+\section{Consensus Rankings and Aggregation}
+
+For the final phase of the project, we aimed to derive consensus rankings of the different preprocessing pipelines based on performance across datasets. I was responsible for implementing most of the ranking and aggregation logic. This included calculating individual performance scores, normalizing results, and applying various ranking strategies to compare configurations objectively.
+
+Additionally, I prepared and delivered the presentation for this section, explaining our methodology and summarizing our key findings. I also ensured that the implementation was robust, well-documented, and reproducible.
 
 \section{Conclusion}
-In conclusion, I contributed significantly to the project by researching various topics, implementing code, and preparing presentations. I learned a lot about data science and how to apply it to real-world problems. I also enjoyed working in a team and collaborating with my teammates. I believe that our project was successful, and we were able to achieve our goals. I am looking forward to the next phase of the subject and continuing to work with my team.
+
+Throughout the project, I contributed significantly to both the technical and organizational aspects. From setting up the repository and gathering datasets to implementing experiments, visualizations, and ranking logic, my work was central to the success of the benchmarking pipeline. The insights gained from this process provided a deeper understanding of the impact of preprocessing choices on machine learning performance.
 
 % --- Bibliography ---
 %\bibliographystyle{plainnat}
